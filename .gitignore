@@ -1,0 +1,33 @@
+# Temporary files
+temp_avatar_*
+temp_bg_*
+temp_fg_*
+temp_sub_*
+temp_voice_*
+temp_v_*
+temp_m_*
+temp_fallback_*
+
+# Output and large media files
+*.mp4
+*.png
+*.jpg
+*.jpeg
+!assets/audio/*.wav
+!assets/avatars/*.jpg
+!assets/avatars/*.png
+
+# Python files
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Logs
+*.log
+
+# Asset generation directories (usually large)
+assets_v14/
+assets_dog/
+assets_pizza/
