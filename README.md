@@ -5,12 +5,15 @@ The Joke Video Engine is an automated tool for generating high-quality joke vide
 ## Features
 
 - **Automated Script Parsing**: Automatically extracts scenes, dialogues, and image prompts from Markdown scripts.
-- **AI Image Generation**: Integrated with SiliconFlow Flux.1-schnell API for cinematic, high-quality images.
-- **Edge TTS Integration**: Generates natural-sounding voices for different characters.
+- **AI Image Generation**: Multi-tier generation logic:
+    1. **SiliconFlow Flux.1-schnell**: High-quality cinematic images.
+    2. **Pollinations.ai**: Reliable secondary fallback.
+    3. **LoremFlickr**: Absolute fallback ensures the process never fails.
+- **Edge TTS Integration**: Generates natural-sounding voices for different characters, with default 1.5x speed support.
 - **Dynamic Subtitles**: Word-level highlighted subtitles synced with the voice.
 - **Visual Transitions**: Ken Burns effect (zoom), cross-fades, and bouncing avatars for dynamic visual storytelling.
-- **Asset Management**: Supports fallback logic for missing assets and organizes media efficiently.
-- **Customizable**: Supports different video formats (Landscape/Shorts) and asset directories.
+- **Turtle Special Edition**: Built-in support for "小烏龜" (Little Turtle) character, including custom avatars and voices.
+- **Asset Management**: Organizes media efficiently and supports fallback assets.
 
 ## Installation
 
@@ -25,7 +28,7 @@ The Joke Video Engine is an automated tool for generating high-quality joke vide
     pip install moviepy pillow requests numpy edge-tts
     ```
 
-3.  **Set up API Key**:
+3.  **Set up API Key (Optional but recommended)**:
     Set your SiliconFlow API key as an environment variable:
     ```bash
     export SILICONFLOW_API_KEY="your_api_key_here"
@@ -33,20 +36,21 @@ The Joke Video Engine is an automated tool for generating high-quality joke vide
 
 ## Usage
 
-Create a script in Markdown format (see `script.md` for example) and run the engine:
+Create a script in Markdown format (see `night_thoughts_script.md` for example) and run the latest engine:
 
 ```bash
-python joke_engine_v14.py script.md output_video.mp4 assets_dir
+python v15_turtle_engine.py script.md output_video.mp4 assets_dir
 ```
 
-- `script.md`: Path to your joke script.
+- `script.md`: Path to your script.
 - `output_video.mp4`: Desired output filename.
 - `assets_dir`: Directory to store generated images for the video.
 
 ## Directory Structure
 
 - `assets/`: Contains core audio (BGM, SFX) and avatar images.
-- `joke_engine_v14.py`: The latest version of the video generation engine.
+- `v15_turtle_engine.py`: The latest version of the video generation engine (Turtle Edition).
+- `joke_engine_v14.py`: The standard SiliconFlow edition.
 - `.gitignore`: Configured to exclude temporary files and large media.
 
 ## License
